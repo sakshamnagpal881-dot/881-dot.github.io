@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #ddd;
+      color: #333;
+    }
+
+    .heart, .flower {
+      position: fixed;
+      font-size: 24px;
+      animation: floatUp 3s linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-600px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SINGLE CARD ONLY -->
+  <div class="card">
+    <h1>Arshita… 💕<br>Will you be my Valentine?</h1>
+    <button id="yesBtn">Yes ❤️</button>
+    <button id="noBtn">No 🙈</button>
+  </div>
+
+  <!-- 🔥 FORCE REMOVE DUPLICATE CARDS (FIX) -->
+  <script>
+    window.addEventListener("load", () => {
+      const cards = document.querySelectorAll(".card");
+      if (cards.length > 1) {
+        for (let i = 1; i < cards.length; i++) {
+          cards[i].remove();
+        }
+      }
+    });
+  </script>
+
+  <!-- MAIN LOGIC -->
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let scale = 1;
+
+    noBtn.addEventListener("click", () => {
+      scale += 0.35;
+      yesBtn.style.transform = `scale(${scale})`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      for (let i = 0; i < 30; i++) {
+        createEmoji("❤️");
+        createEmoji("🌸");
+      }
+
+      document.querySelector(".card").innerHTML = `
+        <h1>Yayyy Arshita 😍💖<br>
+        You just made my day!</h1>
+      `;
+    });
+
+    function createEmoji(symbol) {
+      const emoji = document.createElement("div");
+      emoji.className = symbol === "❤️" ? "heart" : "flower";
+      emoji.innerText = symbol;
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.bottom = "0px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 3000);
+    }
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #ddd;
+      color: #333;
+    }
+
+    .heart, .flower {
+      position: fixed;
+      font-size: 24px;
+      animation: floatUp 3s linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-600px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SINGLE CARD ONLY -->
+  <div class="card">
+    <h1>Arshita… 💕<br>Will you be my Valentine?</h1>
+    <button id="yesBtn">Yes ❤️</button>
+    <button id="noBtn">No 🙈</button>
+  </div>
+
+  <!-- 🔥 FORCE REMOVE DUPLICATE CARDS (FIX) -->
+  <script>
+    window.addEventListener("load", () => {
+      const cards = document.querySelectorAll(".card");
+      if (cards.length > 1) {
+        for (let i = 1; i < cards.length; i++) {
+          cards[i].remove();
+        }
+      }
+    });
+  </script>
+
+  <!-- MAIN LOGIC -->
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let scale = 1;
+
+    noBtn.addEventListener("click", () => {
+      scale += 0.35;
+      yesBtn.style.transform = `scale(${scale})`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      for (let i = 0; i < 30; i++) {
+        createEmoji("❤️");
+        createEmoji("🌸");
+      }
+
+      document.querySelector(".card").innerHTML = `
+        <h1>Yayyy Arshita 😍💖<br>
+        You just made my day!</h1>
+      `;
+    });
+
+    function createEmoji(symbol) {
+      const emoji = document.createElement("div");
+      emoji.className = symbol === "❤️" ? "heart" : "flower";
+      emoji.innerText = symbol;
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.bottom = "0px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 3000);
+    }
+  </script>
+
+</body>
+</html>
